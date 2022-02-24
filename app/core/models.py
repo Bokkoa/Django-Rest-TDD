@@ -10,7 +10,7 @@ class UserManager(BaseUserManager):
         """Creates and saves a new user"""
         if not email:
             raise ValueError('Users must have a email address')
-        # Normalize email is for avoid case sensitive
+        # Normalize the domain email part for avoid case sensitive
         user = self.model(email=self.normalize_email(email), **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
