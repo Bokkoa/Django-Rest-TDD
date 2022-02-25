@@ -1,4 +1,3 @@
-from venv import create
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 from django.urls import reverse
@@ -113,7 +112,7 @@ class PrivateUserApiTest(TestCase):
         )
 
         self.client = APIClient()
-        self.client.force_authentication(user=self.user)
+        self.client.force_authenticate(user=self.user)
 
     def test_retrieve_profile_success(self):
         """Test retrieving profile for logged in used"""
