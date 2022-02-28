@@ -30,6 +30,6 @@ RUN adduser -D user
 
 # Permissions for docker user
 RUN chown -R user:user /vol/
-RUN chown -R 755 /vol/web
+RUN chmod -R 755 /vol/web
 
 USER user
